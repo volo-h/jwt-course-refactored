@@ -11,8 +11,11 @@ Project structure:
 
   docker exec -it ca3ffa /bin/sh
 
-  docker exec -it jwt-course-refactored_postgres_1 psql -U postgres
+  docker exec -it jwt-course-refactored_postgres_1 psql -U postgres 
   <type password: postgres>
+  
+  create database jwtexamples;
+  
   \l                          # list databases
   \c jwtexamples              # connect to database - booklist
   \dt+                        # list tables in current database

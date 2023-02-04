@@ -3,7 +3,6 @@ package controllers
 import (
 	"database/sql"
 	"encoding/json"
-	"github.com/davecgh/go-spew/spew"
 	"jwt-course-refactored/models"
 	"jwt-course-refactored/repository/user"
 	"jwt-course-refactored/utils"
@@ -24,8 +23,6 @@ func (c Controller) Login(db *sql.DB) http.HandlerFunc {
 		var error models.Error
 
 		json.NewDecoder(r.Body).Decode(&user)
-
-		spew.Dump(user)
 
 		if user.Email == "" {
 			error.Message = "Email is missing."
@@ -120,6 +117,6 @@ func (c Controller) Signup(db *sql.DB) http.HandlerFunc {
 		w.Header().Set("Content-Type", "application/json")
 		utils.ResponseJSON(w, user)
 
-		json.NewEncoder(w).Encode(user)
+		//json.NewEncoder(w).Encode(user)
 	}
 }
