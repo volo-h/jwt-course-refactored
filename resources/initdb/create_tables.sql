@@ -1,14 +1,7 @@
-create database jwtexamples;
+CREATE DATABASE jwtexamples;
 
-CREATE TABLE IF NOT EXISTS books (
+CREATE TABLE IF NOT EXISTS users (
   id bigserial PRIMARY KEY,
-  title varchar(250) NOT NULL,
-  author varchar(250) NOT NULL,
-  year varchar(250) NOT NULL
-);
-
-create table users (
-  id serial primary key,
-  email text not null unique,
-  password text not null
+  email varchar(250) NOT NULL unique,
+  password varchar(250) NOT NULL
 );
